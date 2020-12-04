@@ -20,23 +20,13 @@ function getAllBatterType(){
   for(let i=0;i<mainJson.length;i++){
    let batter=mainJson[i].batters.batter;
     for(let j=0;j<batter.length;j++){
-    console.log(batter[j].type);
-    batterArray.push(batter[j].type);
-    }
-  }
-  return batterArray;
-}
-function getAllBatterType(){
-  let batterArray =[];
-  for(let i=0;i<mainJson.length;i++){
-   let batter=mainJson[i].batters.batter;
-    for(let j=0;j<batter.length;j++){
     //console.log(batter[j].type);
     batterArray.push(batter[j].type);
     }
   }
   return batterArray;
 }
+
 
 function getPpuAvg(){
   let x=0.0;
@@ -52,16 +42,26 @@ function getPpuSum(){
   for(let i=0;i<mainJson.length;i++){
    x+=mainJson[i].ppu;
    }
-  console.log(x);
+  //console.log(x);
   return x;
 }
 function getAllIDs(){
-  let x=0.0;
+  let IdArray =[];
   for(let i=0;i<mainJson.length;i++){
-   x+=mainJson[i].ppu;
+   console.log(mainJson[i].id);
+   IdArray.push(mainJson[i].id);
+   let topping=mainJson[i].topping;
+   let batter=mainJson[i].batters.batter;
+   for(let j=0;j<topping.length;j++){
+    console.log(topping[j].id);
+    IdArray.push(topping[j].id);
+    }
+    for(let j=0;j<batter.length;j++){
+    console.log(batter[j].id);
+    IdArray.push(batter[j].id);
+    }
    }
-  console.log(x);
-  return x;
+  return IdArray;
 }
 
 
